@@ -1,0 +1,940 @@
+.body {
+  background-color: #f2e7d9;
+  font-family: "Tiny5", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+button {
+  background-color: #f2e7d9;
+  font-family: "Tiny5", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+input {
+   background-color: #f2e7d9;
+  font-family: "Tiny5", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.imgPhoto {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+}
+
+/* Мобильная адаптация для gifka */
+.gifka {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 65%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6%;
+}
+
+@media (max-width: 768px) {
+  .gifka {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 20px;
+  }
+}
+
+.gifkaImg {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+}
+
+@media (max-width: 480px) {
+  .gifkaImg {
+    width: 150px;
+    height: 150px;
+  }
+  .imgPhoto {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/* Мобильная адаптация для header */
+.header {
+  display: flex;
+  text-align: right;
+  margin-left: 80%;
+  padding: 2%;
+}
+
+@media (max-width: 768px) {
+  .header {
+    margin-left: 0;
+    justify-content: center;
+    text-align: center;
+    padding: 5%;
+  }
+}
+
+.divAbout {
+  text-align: center;
+  padding: 6%;
+  background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.5)),
+    url("/cats.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: top;
+}
+
+@media (max-width: 768px) {
+  .divAbout {
+    padding: 15% 5%;
+    background-attachment: scroll;
+  }
+}
+
+.gift {
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px 0;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 480px) {
+  .gift {
+    padding: 10px;
+    margin: 8px 0;
+  }
+}
+
+.gift.reserved {
+  border-color: #ff6b6b;
+  background-color: #fff5f5;
+  opacity: 0.7;
+}
+
+.reserved-info {
+  color: #ff6b6b;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.reserve-btn {
+  background-color: #b7e0a6;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.reserve-btn:hover {
+  background-color: #45a049;
+}
+
+.reserved,
+.reserved-by-you {
+  color: #666;
+  font-style: italic;
+  padding: 8px 15px;
+}
+
+.reserved-by-you {
+  color: #b7e0a6;
+  font-weight: bold;
+}
+
+.delete-gift-btn {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.delete-gift-btn:hover {
+  background-color: #ff5252;
+}
+
+.unreserve-btn {
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+  margin-top: 5px;
+  transition: all 0.3s ease;
+}
+
+.unreserve-btn:hover {
+  background: #ff5252;
+  transform: scale(1.05);
+}
+
+.reserved-by-you {
+  display: block;
+  color: #b7e0a6;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Мобильная адаптация для priority-buttons */
+.priority-buttons {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .priority-buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+.priority-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  flex: 1;
+  min-width: 100px;
+}
+
+@media (max-width: 480px) {
+  .priority-btn {
+    min-width: auto;
+    font-size: 11px;
+    padding: 10px 8px;
+  }
+}
+
+.priority-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.priority-btn.active {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px currentColor;
+}
+
+/* Цвета для разных приоритетов */
+.priority-low {
+  background: #b7e0a6;
+  color: black;
+}
+
+.priority-medium {
+  background: #ffcb9a;
+  color: black;
+}
+
+.priority-high {
+  background: #e4827c;
+  color: black;
+}
+
+/* Индикатор приоритета в карточке подарка */
+.priority-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: bold;
+  margin-left: 10px;
+  color: black;
+}
+
+.priority-low-badge {
+  background: #b7e0a6;
+}
+
+.priority-medium-badge {
+  background: #ffcb9a;
+}
+
+.priority-high-badge {
+  background: #e4827c;
+}
+
+/* Мобильная адаптация для navigation */
+.navigation {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6%;
+}
+
+@media (max-width: 768px) {
+  .navigation {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 4%;
+  }
+}
+
+@media (max-width: 480px) {
+  .navigation {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 3%;
+  }
+}
+
+.navigationCard {
+  background: #d9cfc3;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .navigationCard {
+    padding: 20px 15px;
+  }
+}
+
+.divSalt {
+  display: block;
+  padding: 10%;
+}
+
+@media (max-width: 768px) {
+  .divSalt {
+    padding: 5%;
+  }
+}
+
+.h2Salt {
+  padding-left: 20%;
+}
+
+@media (max-width: 768px) {
+  .h2Salt {
+    padding-left: 0;
+    text-align: center;
+  }
+}
+
+/* Мобильная адаптация для div3 и div2 */
+.div3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.div2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .div3 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 15px;
+  }
+  
+  .div2 {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .div3 {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 10px;
+  }
+}
+
+.div3Card {
+  background: #d9cfc3;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  text-align: center;
+}
+
+.div2Card {
+  background: #d9cfc3;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .div3Card,
+  .div2Card {
+    padding: 20px 15px;
+  }
+}
+
+.divRespect {
+  display: block;
+  padding: 5%;
+}
+
+@media (max-width: 768px) {
+  .divRespect {
+    padding: 3%;
+  }
+}
+
+.flying-avatar {
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.flying-avatar.flying {
+  animation: randomFlight 4s ease-in-out infinite;
+}
+
+@keyframes randomFlight {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  20% {
+    transform: translate(800px, -60px) rotate(72deg) scale(1.2);
+  }
+  40% {
+    transform: translate(-400px, 900px) rotate(144deg) scale(1.3);
+  }
+  60% {
+    transform: translate(1020px, -900px) rotate(216deg) scale(1.1);
+  }
+  80% {
+    transform: translate(-60px, -80px) rotate(288deg) scale(1.4);
+  }
+}
+
+/* Мобильная адаптация для chat-bot */
+.chat-bot {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: #d9cfc3;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+@media (max-width: 480px) {
+  .chat-bot {
+    width: 50px;
+    height: 50px;
+    bottom: 15px;
+    right: 15px;
+    font-size: 20px;
+  }
+}
+
+.chat-bot:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+}
+
+.chat-window {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 300px;
+  height: 400px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+@media (max-width: 480px) {
+  .chat-window {
+    width: calc(100vw - 40px);
+    height: 50vh;
+    right: 20px;
+    left: 20px;
+    bottom: 80px;
+  }
+}
+
+.chat-window.active {
+  display: flex;
+  animation: chatSlideIn 0.3s ease;
+}
+
+@keyframes chatSlideIn {
+  from {
+    transform: translateY(20px) scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.chat-header {
+  background: #d9cfc3;
+  color: black;
+  padding: 15px;
+  text-align: center;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  background: #f8f9fa;
+}
+
+.message {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 80%;
+}
+
+@media (max-width: 480px) {
+  .message {
+    max-width: 85%;
+    padding: 8px;
+    font-size: 14px;
+  }
+}
+
+.message.bot {
+  background: white;
+  border: 1px solid #e0e0e0;
+  align-self: flex-start;
+}
+
+.message.user {
+  background: #667eea;
+  color: black;
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+.chat-input {
+  padding: 15px;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  gap: 10px;
+}
+
+@media (max-width: 480px) {
+  .chat-input {
+    padding: 10px;
+  }
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  outline: none;
+}
+
+.chat-input button {
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+/* Мобильная адаптация для theme-toggle */
+.theme-toggle {
+  position: fixed;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  transition: all 0.3s ease;
+  border: 3px solid white;
+}
+
+@media (max-width: 768px) {
+  .theme-toggle {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    left: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .theme-toggle {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+    left: 10px;
+    top: auto;
+    bottom: 80px;
+    transform: none;
+  }
+}
+
+.theme-toggle:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+@media (max-width: 480px) {
+  .theme-toggle:hover {
+    transform: scale(1.1);
+  }
+}
+
+.theme-toggle.rainbow-mode {
+  background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1, #ffd93d);
+  animation: rainbowRotate 2s linear infinite;
+}
+
+@keyframes rainbowRotate {
+  0% {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+@media (max-width: 480px) {
+  @keyframes rainbowRotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+/* Радужная тема */
+body.rainbow-theme {
+  background: linear-gradient(
+    45deg,
+    #ff6b6b 0%,
+    #ff8e53 20%,
+    #f9c74f 40%,
+    #4ecdc4 60%,
+    #45b7d1 80%,
+    #764ba2 100%
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+  --text-color: red;
+  --card-bg: rgba(255, 255, 255, 0.15);
+  --accent-color: #ffd93d;
+  --shadow-color: rgba(255, 255, 255, 0.2);
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Элементы в радужной теме */
+body.rainbow-theme .user-card,
+body.rainbow-theme .auth-card,
+body.rainbow-theme .gift,
+body.rainbow-theme .navigationCard,
+body.rainbow-theme .divAbout,
+body.rainbow-theme .divSalt {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px var(--shadow-color);
+  color: var(--text-color);
+}
+
+body.rainbow-theme button,
+body.rainbow-theme .gift-link {
+  background: var(--accent-color);
+  color: #000;
+  font-weight: bold;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+body.rainbow-theme button:hover,
+body.rainbow-theme .gift-link:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px var(--accent-color);
+}
+
+/* Анимация появления радужной темы */
+body.rainbow-theme * {
+  transition: all 0.5s ease;
+}
+
+/* Мобильная адаптация для gifts-container */
+.gifts-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: "low medium high";
+  gap: 20px;
+  margin-top: 30px;
+}
+
+@media (max-width: 1024px) {
+  .gifts-container {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "high"
+      "medium"
+      "low";
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gifts-container {
+    margin-top: 20px;
+    gap: 10px;
+  }
+}
+
+/* Секции для каждого приоритета */
+.priority-section {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 20px;
+  min-height: 400px;
+}
+
+@media (max-width: 480px) {
+  .priority-section {
+    padding: 15px 10px;
+    min-height: 300px;
+  }
+}
+
+.priority-low-section {
+  grid-area: low;
+  border-left: 5px solid #b7e0a6;
+}
+
+.priority-medium-section {
+  grid-area: medium;
+  border-left: 5px solid #ffcb9a;
+}
+
+.priority-high-section {
+  grid-area: high;
+  border-left: 5px solid #e4827c;
+}
+
+/* Заголовки секций */
+.priority-header {
+  text-align: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid currentColor;
+}
+
+@media (max-width: 480px) {
+  .priority-header {
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+  }
+  
+  .priority-header h3 {
+    font-size: 16px;
+  }
+  
+  .priority-header small {
+    font-size: 12px;
+  }
+}
+
+.priority-low-header {
+  color: black;
+}
+
+.priority-medium-header {
+  color: black;
+}
+
+.priority-high-header {
+  color: black;
+}
+
+/* Стили для отдельных подарков внутри секций */
+.gift {
+  background: var(--card-bg);
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border-left: 4px solid;
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 480px) {
+  .gift {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+.gift:hover {
+  transform: translateY(-2px);
+}
+
+.gift.priority-low {
+  border-left-color: #b7e0a6;
+}
+
+.gift.priority-medium {
+  border-left-color: #ffcb9a;
+}
+
+.gift.priority-high {
+  border-left-color: #e4827c;
+}
+
+.profileH1 {
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .profileH1 {
+    font-size: 24px;
+    margin: 15px 0;
+  }
+}
+
+/* Мобильная адаптация для форм и кнопок */
+#gift-name, #gift-desc, #email, #password, #username, #emaillogin, #passwordlogin, #resetEmail, #submit, #submitlogin, .buttonReset, #showUsersBtn, .signOutButton, .gift-button, .back-to-profile-btn  {
+  margin: 10px;
+  padding: 7px;
+  border-radius: 6px;
+  font-size: 16px;
+  background: #fbfbfb;
+  border: 2px solid transparent;
+  box-shadow: 0 0 0 1px #dddddd, 0 2px 4px 0 rgb(0 0 0 / 7%),
+    0 1px 1.5px 0 rgb(0 0 0 / 5%);
+}
+
+@media (max-width: 480px) {
+  #gift-name, #gift-desc, #email, #password, #username, #emaillogin, #passwordlogin, #resetEmail, #submit, #submitlogin, .buttonReset, #showUsersBtn, .signOutButton, .gift-button, .back-to-profile-btn {
+    margin: 8px 5px;
+    padding: 10px;
+    font-size: 14px;
+    width: calc(100% - 10px);
+    box-sizing: border-box;
+  }
+}
+
+#gift-name:focus, #gift-desc:focus, #email:focus, #password:focus, #username:focus, #emaillogin:focus, #passwordlogin:focus, #resetEmail:focus {
+  border: 2px solid #000;
+  border-radius: 4px;
+}
+
+#submit, #submitlogin, .buttonReset{
+  padding-left: 22%;
+  padding-right: 22%;
+  padding-top: 0%;
+  padding-bottom: 0%;
+}
+
+@media (max-width: 480px) {
+  #submit, #submitlogin, .buttonReset {
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    width: auto;
+    min-width: 140px;
+  }
+}
+
+.magic-word {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Дополнительные мобильные улучшения */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+  
+  h1 {
+    font-size: 24px;
+  }
+  
+  h2 {
+    font-size: 20px;
+  }
+  
+  h3 {
+    font-size: 18px;
+  }
+}
+
+/* Предотвращение горизонтального скролла */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}

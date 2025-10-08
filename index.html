@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html class="tiny5-regular">
+  <head>
+    <link rel="preload" as="image" href="/anyagif.gif">
+<link rel="preload" as="image" href="/sanyacrosses.gif">
+<link rel="preload" as="image" href="/tanyalbedo.gif">
+<link rel="preload" as="image" href="/vikagif.gif">
+<link rel="preload" as="image" href="/suslangif.gif">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tiny5&display=swap" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Welcome to Firebase Hosting</title>
+    <link href="/what.css" rel="stylesheet" />
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/12.2.1/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/12.2.1/firebase-auth-compat.js"></script>
+    <script
+      defer
+      src="/__/firebase/12.2.1/firebase-database-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/12.2.1/firebase-firestore-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/12.2.1/firebase-functions-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/12.2.1/firebase-messaging-compat.js"
+    ></script>
+    <script defer src="/__/firebase/12.2.1/firebase-storage-compat.js"></script>
+    <script
+      defer
+      src="/__/firebase/12.2.1/firebase-analytics-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/12.2.1/firebase-remote-config-compat.js"
+    ></script>
+    <script
+      defer
+      src="/__/firebase/12.2.1/firebase-performance-compat.js"
+    ></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+  </head>
+
+  <body class="body">
+    
+    <main>
+      <div id="app" ></div>
+
+      <div id="credit">
+        
+        <div class="divAbout">
+          <h1>Я у мамы одностраничный програмист</h1>
+          <h2>подарки нг едишн</h2>
+          <h3>шрифт я не сменю идите нахуй</h3>
+        </div>
+
+        <div class="navigation">
+        <div class="main navigationCard">
+          <h2>Зарегаться в моей хуйне</h2>
+          <input type="email" id="email" placeholder="твоя почта" required />
+          <br />
+          <input
+            type="password"
+            id="password"
+            placeholder="твой пароль"
+            required
+          />
+          <br />
+          <input type="text" id="username" placeholder="твой никнейм" />
+          <br />
+          <button id="submit" type="submit">ок</button>
+        </div>
+
+        <div class="login navigationCard">
+          <h2>Войти</h2>
+          <input type="email" id="emaillogin" placeholder="твоя почта" required />
+          <input type="password" id="passwordlogin" placeholder="твой пароль" required />
+          <br>
+          <button id="submitlogin" type="submit">ок</button>
+        </div>
+
+        <div id="forgotPasswordModal" class="navigationCard">
+          <div class="card">
+              <p class="lock-icon"><i class="fas fa-lock"></i></p>
+              <h2>Забыли пароль?</h2>
+              <p>Введите ваш email для получения ссылки</p>
+              <p>(и еще, лучше после отправки проверьте вкладку спама - скорее всего оно там)</p>
+              <input type="email" id="resetEmail" placeholder="Email address" class="passInput">
+              <button class="buttonReset">ок</button>
+              
+          </div>
+       </div>
+       </div>
+
+        
+
+        <div class="divAboutMore">
+          <div class="divSalt">
+            <h1>В чем соль?</h1>
+            <h2 class="h2Salt">
+              
+              Вы регистрируетесь, по желанию можете даже выйти из аккаунта чтобы посмотреть
+               на этот замечательный текст, дальше добавляете подарочки и бронируете чужие! Так же человек не будет знать,
+                забронировали ли подарки добавленные им, элемент сюрприза присутствует :>
+                <br>
+                На сайте присутствуют ПаСхАлКи, трогайте тыкайте(после того как тыкнули подождите желательно пару секунд), если найдете баги закрываете глаза обновляете страницу и считаете до трех, все должно пропасть (наверное)
+                <br>
+                 <span id="cumIs" class="cum-is">кумыс</span>
+
+                <!-- Видео, которое изначально скрыто -->
+                <video id="cumIsVideo" width="300" style="display: none;">
+                    <source src="cumis.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                </video>
+            </h2>
+          </div>
+          <div class="divRespect">
+            <h1>Отдельный респект всем:</h1>
+          </div>
+          <div class="div3 ">
+            <div class="div3Card ">
+              <img src="/ya.jpg" class="imgPhoto user-photo your-photo catgif" data-music="/BuryTheLight_cut2.mp3" data-username="anya"/>
+              <h2>Создатель говна</h2>
+              <h3>"Это я"</h3>
+            </div>
+            <div class="div3Card">
+              <img src="/vlad.jpg" class="imgPhoto flying-avatar user-photo" data-music="/vlad1.mp3,/vlad2.mp3" data-username="vlad"/>
+              <h2>Влад</h2>
+              <h3>"50% ОТ ДОХОДА САЙТА МОИ"</h3>
+            </div>
+            <div class="div3Card">
+              <img src="/tanya.jpg" class="imgPhoto user-photo tanyalbedo"  data-music="/AgustD.mp3" data-username="tanya"/>
+              <h2>Таня</h2>
+              <h3>"сделай кнопку для меня если я забыла пароль"</h3>
+            </div>
+          </div>
+          <div class="div3">
+            <div class="div2Card">
+              <img src="/vika.jpg" class="imgPhoto user-photo vikanein" data-music="/Luft.mp3" data-username="vika"/>
+              <h2>Викусик</h2>
+              <h3>"Я кнопка клацать ETL строить сервак делать 200 я деньга получать"</h3>
+            </div>
+            <div class="div2Card">
+              <img src="/sanya.jpg" class="imgPhoto user-photo sanyacrosses" data-music="/Deftones.mp3" data-username="sanya"/>
+              <h2>Саня</h2>
+              <h3>"Саньчоуз сальчичон синечек колесо саньсары"</h3>
+            </div>
+            <div class="div2Card">
+              <img src="/suslan.jpg" class="imgPhoto user-photo crueltyruslan" data-music="/GrOb.mp3" data-username="ruslan"/>
+              <h2>Русланус</h2>
+              <h3>"синхранисете"</h3>
+            </div>
+          </div>
+        </div>
+        <div class="gifka">
+          <img class="gifkaImg" src="/3f1bbacb688be6f52b2c1ffcd8a14c28.gif" alt="я джифка">
+          <img class="gifkaImg" src="/154398cd9fbcf9eca96273abf6911c1d.gif" alt="я джифка">
+        </div>
+      </div>
+    </main>
+
+    <script src="/login.js" type="module"></script>
+    <script src="/signUp.js" type="module"></script>
+  </body>
+</html>
